@@ -1,9 +1,22 @@
 version: 1
 jobs:
-  patata_name:
+  compile:
     image: node
     script:
-      - npm install truffle
-      - npm install
-      - ./node_modules/.bin/truffle compile
-      - ./node_modules/.bin/truffle test
+      - echo Hello world!
+  test:
+    image: node
+    script:
+      - echo Multiple Jobs can be defined the same way as single jobs
+      - echo http://superblocks.com/docs/configuration/configuration-introduction/#section=configuration
+
+  deploy_ropsten_metamask:
+    image: node:10
+    script:
+        - echo TADAAA
+stages:
+  - custom_sequence:
+      jobs:
+        - compile
+        - test
+        - deploy_ropsten_metamask
