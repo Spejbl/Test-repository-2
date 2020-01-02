@@ -7,6 +7,7 @@ jobs:
   test:
     image: node
     script:
+      - npx truffle
       - echo Multiple Jobs can be defined the same way as single jobs
       - echo http://superblocks.com/docs/configuration/configuration-introduction/#section=configuration
 
